@@ -44,7 +44,10 @@ class PCF8574
 
     // Initialize the library. Must be called first
     void begin();
+
+    #if defined(ESP8266) || defined(ESP32)
     void begin(byte sdaPin, byte sclPin);
+    #endif
 
     void setPinHigh(byte address, PinIndex pin);
     void setPinLow(byte address, PinIndex pin);
