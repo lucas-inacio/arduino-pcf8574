@@ -10,9 +10,11 @@ void PCF8574::begin() {
   Wire.begin();
 }
 
+#if defined(ESP8266) || defined(ESP32)
 void PCF8574::begin(byte sdaPin, byte sclPin) {
   Wire.begin(sdaPin, sclPin);
 }
+#endif
 
 void PCF8574::setPinHigh(byte address, PCF8574::PinIndex pin) {
   m_Pins.value |= static_cast<byte>(pin);
@@ -43,7 +45,7 @@ char PCF8574::readPin(byte address, PCF8574::PinIndex pin) {
   // First the pin must be set high
   this->setPinHigh(address, pin);
   // Then we can read from it
-  if (Wire.requestFrom(address, 1, true) == 1) {
+  if (Wire.requestFrom((int)address, (int)1, (int)true) == 1) {
     byte reg = Wire.read();
     return (reg & static_cast<byte>(pin)) ? 1 : 0;
   } else {
@@ -60,7 +62,7 @@ void PCF8574::writeWord(byte address, byte value) {
 
 int16_t PCF8574::readWord(byte address) {
   this->writeWord(address, 0xFF);
-  if (Wire.requestFrom(address, 1, true) == 1) {
+  if (Wire.requestFrom((int)address, (int)1, (int)true) == 1) {
     byte reg = Wire.read();
     return reg;
   }
