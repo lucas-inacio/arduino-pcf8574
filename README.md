@@ -7,7 +7,7 @@ The PCF8574 chip operates with the i2c standard and needs proper manipulation to
 
 ### Interface
 Currently the code defines the following constants and functions:
-```
+```C++
 PCF_P0...PCF_P7 // These are constants that map to the chip pins
 
 // Initialization
