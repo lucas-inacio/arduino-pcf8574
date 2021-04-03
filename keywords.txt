@@ -1,0 +1,44 @@
+#######################################
+# Syntax Coloring Map for library MFRC522
+#######################################
+
+#######################################
+# KEYWORD1 Classes, datatypes, and C++ keywords
+#######################################
+PCF_P0	KEYWORD1
+PCF_P1	KEYWORD1
+PCF_P2	KEYWORD1
+PCF_P3	KEYWORD1
+PCF_P4	KEYWORD1
+PCF_P5	KEYWORD1
+PCF_P6	KEYWORD1
+PCF_P7	KEYWORD1
+ 
+#######################################
+# KEYWORD2 Methods and functions
+#######################################
+
+# Basic interface functions for communicating with the MFRC522
+begin	KEYWORD2
+setPinHigh	KEYWORD2
+setPinLow	KEYWORD2
+togglePin	KEYWORD2
+readPin	KEYWORD2
+writeWord	KEYWORD2
+readWord	KEYWORD2
+
+#######################################
+# KEYWORD3 setup and loop functions, as well as the Serial keywords
+#######################################
+
+#######################################
+# LITERAL1 Constants
+#######################################
+PCF_P0	LITERAL1
+PCF_P1	LITERAL1
+PCF_P2	LITERAL1
+PCF_P3	LITERAL1
+PCF_P4	LITERAL1
+PCF_P5	LITERAL1
+PCF_P6	LITERAL1
+PCF_P7	LITERAL1
